@@ -12,18 +12,23 @@ import org.apache.commons.io.FileUtils;
 
 public class Inmemory_Filesystem {
 
-	String path ="folderpath";
+	static String path ="folderpath";
 	public static void main(String[] args) {
 		
-		//Create a folder
-		//r
-		
-		
+		create_Folder("dir1");
+		create_Folder("dir2");
+		create_File("test1");
+		create_File("test2");
+		 read_File(path+"test1");
+		 copy_File("dir1","test1","dir2","test3");
+		 search_file("dir1", "test1" )
+		 
+		 
 	}
 	
 		
 	
-	public void create_Folder(String name){
+	public static void create_Folder(String name){
 		// create 3 folders
 		 int i =0;
 		//while(i!=2)
@@ -44,7 +49,7 @@ public class Inmemory_Filesystem {
 	//	i++;
 		}
 		
-		public void create_File(String name) throws IOException{
+		public static void create_File(String name) throws IOException{
 			String tdata = "This is a test";
 			 //Create 3 new files    
 		  //  int i=0;
@@ -66,7 +71,7 @@ public class Inmemory_Filesystem {
 		//}
 		}
 		
-		   public void read_File(String name) throws IOException{
+		   public static void read_File(String name) throws IOException{
 			   
 			   // To print the content from a file
 			   @SuppressWarnings("resource")
@@ -76,7 +81,7 @@ public class Inmemory_Filesystem {
 			        }
 		   }
 		    
-		public void copy_File(String src_dir,String src_file,String target_dir,String target_file){
+		public static void copy_File(String src_dir,String src_file,String target_dir,String target_file){
 
 			File source = new File(src_dir+src_file);
 			File dest = new File(target_dir+target_file);
@@ -88,7 +93,7 @@ public class Inmemory_Filesystem {
 			
 		}
 		  
-		public void search_file(String src_dir, String fname ){
+		public static void search_file(String src_dir, String fname ){
 			
 			File directory = new File(src_dir);
 
